@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected class MyView extends View {
         int j=0;
+        int checkCnt=0;
         int[] x2=new int[] {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         int[] y2=new int[] {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         public int cntCrt=0, cntWrg=0;
@@ -64,18 +65,26 @@ public class MainActivity extends AppCompatActivity {
         public boolean onTouchEvent(MotionEvent event) {
             switch(event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    x2[j] = (int) event.getX();
-                    y2[j] = (int) event.getY();
-                    //x 330~400
-                    //y 150~230
-                    if ((330 < x2[j] && x2[j] < 400) && (150 < y2[j] && y2[j] < 230)) {
-                            Toast.makeText(MainActivity.this, "정답입니다!", Toast.LENGTH_SHORT).show();
-                            cntCrt++;
-                            invalidate();
-                    } else {
-                        Toast.makeText(MainActivity.this, "틀렸습니다!", Toast.LENGTH_SHORT).show();
+                    int x = (int) event.getX();
+                    int y = (int) event.getY();
+
+                    //x 330~400 ,480~520
+                    //y 150~230 ,210~250
+                    if ((330 < x && x < 400) && (150 < y&& y < 230)&&checkCnt==0) {
+                        x2[j] = x;
+                        y2[j] = y;
+                        Toast.makeText(MainActivity.this, "정답입니다!", Toast.LENGTH_SHORT).show();
+                        cntCrt++;
+                        checkCnt = 1;
+                        invalidate();
+                    }
+                    else if ((330 < x && x< 400) && (150 < y && y < 230)&&checkCnt==1){
+                        Toast.makeText(MainActivity.this, "중복입니다 다시 체크해주세요", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "오답입니다", Toast.LENGTH_SHORT).show();
+                        invalidate();
                         cntWrg++;
-                       invalidate();
                     }
                     j++;
 //                    String msg = "터치를 입력받음 : " +x+" / " +y;
