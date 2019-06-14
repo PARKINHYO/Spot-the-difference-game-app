@@ -2,7 +2,5 @@
 
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="다시하기" android:id="@+id/regame"/>
     <item android:title="홈으로" android:id="@+id/goHome"/>
-
 </menu>

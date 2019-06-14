@@ -5,11 +5,15 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="틀린그림찾기"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".scoreActivity"></activity>
+        <activity android:name=".Answer3"></activity>
+        <activity android:name=".Answer2" />
+        <activity android:name=".Answer1" />
+        <activity android:name=".thirdImage" />
+        <activity android:name=".secondImage" />
         <activity android:name=".firstImage" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".MainActivity">
