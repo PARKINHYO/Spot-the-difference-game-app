@@ -54,7 +54,7 @@ public class thirdImage extends AppCompatActivity {
 
 
 
-            Intent notificationIntent = new Intent(getApplicationContext(), Main2Activity.class);
+            Intent notificationIntent = new Intent(getApplicationContext(), Main4Activity.class);
 
             notificationIntent.putExtra("cntCrt",cntCrt);
             notificationIntent.putExtra("cntWrg",cntWrg);
@@ -98,13 +98,15 @@ public class thirdImage extends AppCompatActivity {
             }
 
             paint.setAntiAlias(true);
-            paint.setColor(Color.BLACK);
+            paint.setColor(Color.BLUE);
             paint.setTextSize(50);
-            paint.setStrokeWidth(1);
-
+            paint.setStrokeWidth(10);
+            paint.setStyle(Paint.Style.FILL);
             canvas.drawText("맞은개수: " + cntCrt, 100, 50, paint);
+            paint.setColor(Color.RED);
             canvas.drawText("틀린개수: " + cntWrg, 450, 50, paint);
-            canvas.drawText("남은기회: "+remain, 800, 50, paint);
+            paint.setColor(Color.MAGENTA);
+            canvas.drawText("남은기회: " + remain, 800, 50, paint);
         }
 
         @Override

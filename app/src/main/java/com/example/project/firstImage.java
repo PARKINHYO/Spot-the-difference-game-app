@@ -90,19 +90,22 @@ public class firstImage extends AppCompatActivity {
             paint.setStrokeWidth(10);
             paint.setColor(Color.RED);
 
-            for(int i=0;i<j;i++){
-                if(x2[i]!=0&&y2[i]!=0) {
+            for (int i = 0; i < j; i++) {
+                if (x2[i] != 0 && y2[i] != 0) {
                     canvas.drawCircle(x2[i], y2[i], 30, paint);
                 }
             }
 
             paint.setAntiAlias(true);
-            paint.setColor(Color.BLACK);
+            paint.setColor(Color.BLUE);
             paint.setTextSize(50);
-            paint.setStrokeWidth(1);
-            canvas.drawText("맞은개수: "+cntCrt, 100, 50, paint);
-            canvas.drawText("틀린개수: "+cntWrg, 450, 50, paint);
-            canvas.drawText("남은기회: "+remain, 800, 50, paint);
+            paint.setStrokeWidth(10);
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawText("맞은개수: " + cntCrt, 100, 50, paint);
+            paint.setColor(Color.RED);
+            canvas.drawText("틀린개수: " + cntWrg, 450, 50, paint);
+            paint.setColor(Color.MAGENTA);
+            canvas.drawText("남은기회: " + remain, 800, 50, paint);
         }
 
         @Override

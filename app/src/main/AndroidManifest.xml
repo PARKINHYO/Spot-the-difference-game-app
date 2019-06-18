@@ -4,12 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="틀린그림찾기"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Answer3"></activity>
+        <activity android:name=".Main4Activity"></activity>
+        <activity android:name=".Main3Activity" />
+        <activity android:name=".Answer3" />
         <activity android:name=".Answer2" />
         <activity android:name=".Answer1" />
         <activity android:name=".thirdImage" />
